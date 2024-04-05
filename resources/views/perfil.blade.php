@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+<div class = "cornav">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <div class="container-fluid">
  
@@ -10,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Pagina inicial <span class="sr-only"></span></a>
+        <a class="nav-link" href="{{route('Inicio')}}">Pagina inicial <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Catalogo</a>
@@ -34,6 +35,12 @@
   </div>
 </nav>
 </div>
-
+</div>
+<div class="wrapper">
+<div class="jumbotron text-center">
+    <h1 class="display-4">Teste</h1>
+    <p class="lead"></p>
+  </div>
+</div>
 
 

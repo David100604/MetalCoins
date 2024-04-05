@@ -19,3 +19,19 @@ h2{
     background-color: var( --ws-btn-aviso-bg-color);
     color: var(--ws-fg-color);
 }
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    color: var(--ws-uc-color);
+}
+
+.jumbotron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+
+}
+
