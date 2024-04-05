@@ -10,7 +10,7 @@
 
         <div id="login_inputs">
 
-            <div class="login_input-box">
+            <div class="login-input-box">
                 <label for="username">
                     Nome de Usuário
                     <div class="login-input-field">
