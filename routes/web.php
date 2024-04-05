@@ -44,6 +44,10 @@ Route::get('disciplina/{id}/delete',
            [\App\Http\Controllers\DisciplinaController::class,'destroy'])
            ->name('disciplina.excluir');
 
+Route::get('perfil',
+       [\App\Http\Controllers\PerfilController::class,'index'])
+       ->name('perfil');
+
 
 
 

@@ -21,7 +21,7 @@
 </ul>
 
 <div class ="text-center">
-<a class="btn btn-danger my-2 " href="{{ route('Inicio') }}">Voltar para o inicio</a>
+<a class="btn btn-outline-secondary my-2 " href="{{ route('Inicio') }}">Voltar para o inicio</a>
 </div>
 </div>
 
