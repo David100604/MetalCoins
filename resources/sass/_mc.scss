@@ -35,7 +35,6 @@
 
 #login_form_header h1{
     font-size: 32px;
-
 }
 
 #login_inputs{
@@ -83,4 +82,76 @@
     color: var(--color-light-50);
     width: 300px;
     padding: 5px;
+}
+
+
+// Cadastros
+
+#form_cadastro{
+    border: 1px solid black;
+    min-width: 1200px;
+    min-height: 800px;
+    margin-top: 100px;
+    display: flex;
+}
+
+#form_cadastro_conteudo{
+    min-width: 680px;
+    padding: 50px;
+}
+
+#form_cadastro_header{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: left;
+    gap: 40px;
+}
+
+#cadastro_voltar i{
+    font-size: 20px;
+}
+
+#cadastro_voltar{
+    font-size: 15px;
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    color: var(--color-dark-900);
+}
+
+#linha_cadastro{
+    border: 2px solid var(--color-green-100);
+}
+
+
+#form_cadastro img{
+    border: 1px solid red;
+}
+
+#form_cadastro_inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 500px;
+}
+
+.cadastro-input-field{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    min-height: 40px;
+    font-size: 20px;
+}
+
+.cadastro-input-field input{
+    border: none;
+    background-color: var(--color-light-100);
+    width: 300px;
+    font-size: 18px;
+    padding: 0px 5px;
 }
