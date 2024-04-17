@@ -90,13 +90,14 @@
 
 
 #form_cadastro{
-    border: 5px solid var(--color-green-100);
+    border: 5px solid var(--color-dark-900);
     width: 1080px;
     min-height: 750px;
     margin-top: 100px;
     display: flex;
     position: absolute;
     left: 20%;
+    background-color: var(--color-light-50);
 }
 
 #form_cadastro_conteudo{
@@ -132,7 +133,7 @@
 
 
 #img_lateral {
-    background: url('/public/images/img-cadastrar-produto.png');
+    background: url('/public/images/img-cadastrar-produto.png') no-repeat;
     min-width: 520px;
 }
 

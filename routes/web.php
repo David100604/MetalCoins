@@ -14,6 +14,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::view('/home-admin', 'home-admin')
+->name('home.admin');
+
 Route::get('/produtos', 
             [\App\Http\Controllers\ProdutoController::class, 'index'])
             ->name('produto.index');
@@ -41,3 +44,32 @@ Route::get('/produto/editar',
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/servicos',
+[App\Http\Controllers\ServicoController::class, 'index'])
+->name('servicos.index');
+
+Route::get('servico/editar',
+[App\Http\Controllers\ServicoController::class, 'edit'])
+->name('servico.editar');
+
+Route::put('servico.atualizar/{id_item}',
+[App\Http\Controllers\ServicoController::class, 'update'])
+->name('servico.atualizar');
+
+Route::get('/servico/novo',
+[App\Http\Controllers\ServicoController::class, 'create'])
+->name('servico.novo');
+
+Route::post('/servico/incluir',
+[App\Http\Controllers\ServicoController::class, 'store'])
+->name('servico.incluir');
+
+Route::get('/servico/{id_item}/excluir',
+[App\Http\Controllers\ServicoController::class, 'destroy'])
+->name('servico.excluir');
+
+//PESQUISAR
+Route::get('/servico/pesquisar',
+[App\Http\Controllers\ServicoController::class, 'search'])
+->name('servico.pesquisar');
