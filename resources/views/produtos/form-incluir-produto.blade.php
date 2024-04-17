@@ -36,33 +36,46 @@
 
                         <div class="cadastro-input-field">
                             <label for="produto">Descrição</label>
-                            <input type="text" name="descricao" id="produto" class="form-input" 
-                                value=""/>
+                            <textarea type="text" name="descricao" id="produto" class="form-input" 
+                                value=""></textarea>
                         </div>
 
-                        <div class="cadastro-input-field">
-                            <label for="produto">Valor</label>
-                            <input type="text" name="valor" id="produto" class="form-input" 
-                                value=""/>
+                        <div id="input-inline">
+
+                            <div class="cadastro-input-field">
+                                <label for="produto">Valor</label>
+                                <input type="text" name="valor" id="produto" class="form-input" 
+                                    value=""/>
+                            </div>
+
+                            <div id="tipo_item" class="cadastro-input-field">
+                                <label for="produto">Tipo de Item</label>
+                                <input type="text" name="tipo_item" id="produto" class="form-input" 
+                                    value="Produto" readonly/>
+                            </div>                          
+
+                            <div class="cadastro-input-field">
+                                <label for="produto">Estoque</label>
+                                <input type="text" name="estoque" id="produto" class="form-input" 
+                                    value=""/>
+                            </div>
+
                         </div>
 
-                        <div class="cadastro-input-field">
-                            <label for="produto">Tipo de Item</label>
-                            <input type="text" name="tipo_item" id="produto" class="form-input" 
-                                value="Produto" readonly/>
-                        </div>                          
-
-                        <div class="cadastro-input-field">
-                            <label for="produto">Estoque</label>
-                            <input type="text" name="estoque" id="produto" class="form-input" 
-                                value=""/>
-                        </div>
                     </div>
 
                 </div>
+
+                <div id="buttons">
+                    <button id="btn_limpar" type="reset">Limpar</button>
+                    <button id="btn_cadastrar" type="submit">Cadastrar</button>
+                </div>
+
             </div>
 
-            <img src="\public\images\img-cadastrar-produto.png">
+            <div id="img_lateral">
+
+            </div>
 
         </form>
     </div>
