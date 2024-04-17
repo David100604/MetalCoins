@@ -2,50 +2,78 @@
 
 @section('content')
     <div class="container">
-        <form class="card p-2 form-dn" action="{{ route('produto.atualizar', ['item_id' => $produto->item_id]) }}" method="POST">
 
-            @method('PUT')
+        <form id="form_cadastro" action="{{ route('produto.incluir') }}" method="POST">
+
             @csrf
+            <div id="form_cadastro_conteudo">
 
-            <div class="card-header">
-                <div class="card-title">
-                    Editando Produto
+                <div id="form_cadastro_header">
+
+                    <a id="cadastro_voltar" href="{{ route('produto.index') }}">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    
+                    <h1 id="form_title">Cadastrar Produto</h1>
                 </div>
+                
+                <hr id="linha_cadastro">
+
+                <div id="form_cadastro_dados">
+                    
+                    <div class="id-cadastro">
+                        <label for="id" class="label-form">ID</label>
+                        <input type="number" name="id" id="id" class="form-input" value="0" readonly>
+                    </div>
+
+                    <div id="form_cadastro_inputs">
+
+                        <div class="cadastro-input-field">
+                            <label for="produto">Nome do Produto</label>
+                            <input type="text" name="nome" id="produto" class="form-input" 
+                            value="{{ $item->nome }}"/>
+                        </div>
+
+                        <div class="cadastro-input-field">
+                            <label for="produto">Descrição</label>
+                            <textarea type="text" name="descricao" id="produto" class="form-input" 
+                                value="{{ $item->descricao }}"></textarea>
+                        </div>
+
+                        <div id="input-inline">
+
+                            <div class="cadastro-input-field">
+                                <label for="produto">Valor</label>
+                                <input type="text" name="valor" id="produto" class="form-input" 
+                                    value="{{ $item->valor }}"/>
+                            </div>
+
+                            <div id="tipo_item" class="cadastro-input-field">
+                                <label for="produto">Tipo de Item</label>
+                                <input type="text" name="tipo_item" id="produto" class="form-input" 
+                                    value="Produto" readonly/>
+                            </div>                          
+
+                            <div class="cadastro-input-field">
+                                <label for="produto">Estoque</label>
+                                <input type="text" name="estoque" id="produto" class="form-input" 
+                                    value="{{ $item->estoque }}"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="buttons">
+                    <button id="btn_limpar" type="reset">Limpar</button>
+                    <button id="btn_cadastrar" type="submit">Cadastrar</button>
+                </div>
+
             </div>
 
-            <div class="card-body">
-                <a href="{{ route('produto.novo') }}"></a>
-                <div class="form-group">
-                    <label for="id" class="label-form">ID</label>
-                    <input type="number" name="id" id="id" class="form-control" value="{{ $produto->produto_id }}" readonly>
-                </div>
-
-                <div class="form-group">
-                    <label for="produto" class="label-form">Nome</label>
-                    <input type="text" name="nome" id="produto" class="form-control" 
-                    value="{{ $item->nome }}"/>
-
-                    <label for="produto" class="label-form">Descrição</label>
-                    <input type="text" name="descricao" id="produto" class="form-control" 
-                        value="{{ $item->descricao }}"/>
-
-                    <label for="produto" class="label-form">Valor</label>
-                    <input type="text" name="valor" id="produto" class="form-control" 
-                        value="{{ $item->valor }}"/>
-
-                    <label for="produto" class="label-form">Tipo de Item</label>
-                    <input type="text" name="tipo_item" id="produto" class="form-control" 
-                        value="Produto" readonly/>
-
-                    <label for="produto" class="label-form">Estoque</label>
-                    <input type="text" name="estoque" id="produto" class="form-control" 
-                        value="{{ $produto->estoque }}"/>
-            </div>
-
-            <div class="card-footer">
-
-                <button type="submit" class="btn btn-info shadow">Atualizar</button>
-                <button type="reset" class="btn btn-dark shadow">Limpar</button>
+            <div id="img_lateral_produto">
 
             </div>
 

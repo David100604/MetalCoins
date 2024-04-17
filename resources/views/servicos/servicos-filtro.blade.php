@@ -24,8 +24,8 @@
     </thead>
     <tbody>
         @foreach ($resultados as $resultado)
-        @dd($resultado)
-
+        
+        @if($resultado->servicos)
         <tr>
             <td>
                 <li>{{ $resultado->servicos->item_id }}</li> 
@@ -52,6 +52,7 @@
                 class="btn btn-danger btn-sm">Excluir</a>
             </td>
         </tr>
+        @endif
 
         @endforeach
     </tbody>
