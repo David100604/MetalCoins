@@ -25,7 +25,7 @@
     </thead>
     <tbody>
         @foreach ($itens as $item)
-
+        
         @if($item->servicos)
         <tr>
             <td>

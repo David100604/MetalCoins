@@ -53,7 +53,7 @@ Route::get('servico/editar',
 [App\Http\Controllers\ServicoController::class, 'edit'])
 ->name('servico.editar');
 
-Route::put('servico.atualizar/{id_item}',
+Route::put('servico.atualizar/{item_id}',
 [App\Http\Controllers\ServicoController::class, 'update'])
 ->name('servico.atualizar');
 
@@ -65,7 +65,7 @@ Route::post('/servico/incluir',
 [App\Http\Controllers\ServicoController::class, 'store'])
 ->name('servico.incluir');
 
-Route::get('/servico/{id_item}/excluir',
+Route::get('/servico/{item_id}/excluir',
 [App\Http\Controllers\ServicoController::class, 'destroy'])
 ->name('servico.excluir');
 

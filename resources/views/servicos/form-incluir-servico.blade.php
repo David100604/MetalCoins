@@ -1,54 +1,82 @@
-
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
 
-<form class="card" action="{{route('servico.incluir')}}" method="POST">
+        <form id="form_cadastro" action="{{ route('servico.incluir') }}" method="POST">
 
-    @csrf
+            @csrf
+            <div id="form_cadastro_conteudo">
 
-    <div class="card-header">
-        <div class="card-title">
-            Cadastrar Serviço
-        </div>
+                <div id="form_cadastro_header">
+
+                    <a id="cadastro_voltar" href="{{ route('servicos.index') }}">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    
+                    <h1 id="form_title">Cadastrar Serviço</h1>
+                </div>
+                
+                <hr id="linha_cadastro">
+
+                <div id="form_cadastro_dados">
+                    
+                    <div class="id-cadastro">
+                        <label for="id" class="label-form">ID</label>
+                        <input type="number" name="id" id="id" class="form-input" value="0" readonly>
+                    </div>
+
+                    <div id="form_cadastro_inputs">
+
+                        <div class="cadastro-input-field">
+                            <label for="produto">Nome do Serviço</label>
+                            <input type="text" name="nome" id="produto" class="form-input" 
+                            value=""/>
+                        </div>
+
+                        <div class="cadastro-input-field">
+                            <label for="produto">Descrição</label>
+                            <textarea type="text" name="descricao" id="produto" class="form-input" 
+                                value=""></textarea>
+                        </div>
+
+                        <div id="input-inline">
+
+                            <div class="cadastro-input-field">
+                                <label for="produto">Valor</label>
+                                <input type="text" name="valor" id="produto" class="form-input" 
+                                    value=""/>
+                            </div>
+
+                            <div id="tipo_item" class="cadastro-input-field">
+                                <label for="produto">Tipo de Item</label>
+                                <input type="text" name="tipo_item" id="produto" class="form-input" 
+                                    value="Produto" readonly/>
+                            </div>                          
+
+                            <div class="cadastro-input-field">
+                                <label for="produto">Provedor</label>
+                                <input type="text" name="estoque" id="produto" class="form-input" 
+                                    value=""/>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="buttons">
+                    <button id="btn_limpar" type="reset">Limpar</button>
+                    <button id="btn_cadastrar" type="submit">Cadastrar</button>
+                </div>
+
+            </div>
+
+            <div id="img_lateral_servico">
+
+            </div>
+
+        </form>
     </div>
-
-    <div class="card-body">
-        <div class="form-group">
-            <label for="id" class="label-form">ID do serviço</label>
-            <input type="number" name="id" id="id" class="form-control" 
-                   value="0" readonly/>
-        </div>
-        <div class="form-group">
-            <label for="servico" class="label-form">Nome</label>
-            <input type="text" name="nome" id="servico" class="form-control" 
-                   value="" required/>
-
-            <label for="servico" class="label-form">Descrição</label>
-            <input type="text" name="descricao" id="servico" class="form-control" 
-                   value="" required/>
-
-            <label for="servico" class="label-form">Valor</label>
-            <input type="text" name="valor" id="servico" class="form-control" 
-                   value="" required/>
-
-            <label for="servico" class="label-form">Tipo de Item</label>
-            <input type="text" name="tipo_item" id="servico" class="form-control" 
-                   value="Serviço" readonly/>
-
-            <label for="servico" class="label-form">Provedor</label>
-            <input type="text" name="provedor" id="servico" class="form-control" 
-                   value="" required/>
-        </div>
-    </div>
-
-    <div class="card-footer text-center">
-        <a href="{{route('servicos.index')}}" class="btn btn-primary">
-            Voltar
-        </a>
-        <button type="reset" class="btn btn-secondary">Limpar</button>
-        <button type="submit" class="btn btn-danger">Adicionar</button>
-    </div>
-</form>
-
 @endsection

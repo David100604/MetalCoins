@@ -10,7 +10,7 @@
 
                 <div id="form_cadastro_header">
 
-                    <a id="cadastro_voltar" href="#">
+                    <a id="cadastro_voltar" href="{{ route('produto.index') }}">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                     
@@ -73,7 +73,7 @@
 
             </div>
 
-            <div id="img_lateral">
+            <div id="img_lateral_produto">
 
             </div>
 

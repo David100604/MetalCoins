@@ -16,6 +16,7 @@ class ServicoController extends Controller
     public function index()
     {
         //
+        $servicos = \App\Models\Servico::all();
         $itens = \App\Models\Item::all();
 
         $dados = [];

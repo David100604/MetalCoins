@@ -19,4 +19,9 @@ class Item extends Model
         
         return $this->hasOne(Produto::class, 'item_id');
     }
+
+    public function servicos() {
+        
+        return $this->hasOne(Servico::class, 'item_id');
+    }
 }

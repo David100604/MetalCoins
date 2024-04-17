@@ -132,8 +132,13 @@
 }
 
 
-#img_lateral {
+#img_lateral_produto {
     background: url('/public/images/img-cadastrar-produto.png') no-repeat;
+    min-width: 520px;
+}
+
+#img_lateral_servico {
+    background: url('/public/images/img-cadastrar-servico.png') no-repeat;
     min-width: 520px;
 }
 

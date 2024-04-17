@@ -24,6 +24,7 @@
     </thead>
     <tbody>
         @foreach ($resultados as $resultado)
+        @dd($resultado)
 
         <tr>
             <td>
