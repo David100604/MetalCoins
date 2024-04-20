@@ -90,7 +90,9 @@
 
 
 #form_cadastro{
-    border: 5px solid var(--color-dark-900);
+    border: 5px solid transparent;
+    border-image: var(--border-gradient);
+    border-image-slice: 1; 
     width: 60%;
     margin: 40px auto;
     display: flex;
