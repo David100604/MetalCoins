@@ -4,7 +4,7 @@
     <div class="container">
 
         <form id="form_cadastro" action="{{ route('produto.incluir') }}" method="POST">
-
+            @method('PUT')
             @csrf
             <div id="form_cadastro_conteudo">
 

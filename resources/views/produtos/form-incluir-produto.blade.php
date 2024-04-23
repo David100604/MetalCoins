@@ -37,7 +37,7 @@
                         <div class="cadastro-input-field">
                             <label for="produto">Descrição</label>
                             <textarea type="text" name="descricao" id="produto" class="form-input" 
-                                value=""></textarea>
+                                rows="4"></textarea>
                         </div>
 
                         <div id="input-inline">
@@ -74,7 +74,7 @@
             </div>
 
             <div id="img_lateral_produto">
-
+                <img class="img-lateral" src="../images/img-cadastrar-produto.png" alt="teste">
             </div>
 
         </form>

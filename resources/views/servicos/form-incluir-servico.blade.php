@@ -29,34 +29,34 @@
                     <div id="form_cadastro_inputs">
 
                         <div class="cadastro-input-field">
-                            <label for="produto">Nome do Serviço</label>
-                            <input type="text" name="nome" id="produto" class="form-input" 
+                            <label for="servico">Nome do Serviço</label>
+                            <input type="text" name="nome" id="servico" class="form-input" 
                             value=""/>
                         </div>
 
                         <div class="cadastro-input-field">
-                            <label for="produto">Descrição</label>
-                            <textarea type="text" name="descricao" id="produto" class="form-input" 
-                                value=""></textarea>
+                            <label for="servico">Descrição</label>
+                            <textarea type="text" name="descricao" id="servico" class="form-input" 
+                                rows="4"></textarea>
                         </div>
 
                         <div id="input-inline">
 
                             <div class="cadastro-input-field">
-                                <label for="produto">Valor</label>
-                                <input type="text" name="valor" id="produto" class="form-input" 
+                                <label for="servico">Valor</label>
+                                <input type="text" name="valor" id="servico" class="form-input" 
                                     value=""/>
                             </div>
 
                             <div id="tipo_item" class="cadastro-input-field">
-                                <label for="produto">Tipo de Item</label>
-                                <input type="text" name="tipo_item" id="produto" class="form-input" 
-                                    value="Produto" readonly/>
+                                <label for="servico">Tipo de Item</label>
+                                <input type="text" name="tipo_item" id="servico" class="form-input" 
+                                    value="Serviço" readonly/>
                             </div>                          
 
                             <div class="cadastro-input-field">
-                                <label for="produto">Provedor</label>
-                                <input type="text" name="estoque" id="produto" class="form-input" 
+                                <label for="provedor">Provedor</label>
+                                <input type="text" name="provedor" id="provedor" class="form-input" 
                                     value=""/>
                             </div>
 
@@ -74,7 +74,7 @@
             </div>
 
             <div id="img_lateral_servico">
-
+            <img class="img-lateral" src="../images/img-cadastrar-servico.png" alt="teste">
             </div>
 
         </form>
