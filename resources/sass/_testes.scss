@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+
 // Login
 
 #login_container{
@@ -93,16 +97,17 @@
     border: 5px solid transparent;
     border-image: var(--border-gradient);
     border-image-slice: 1; 
-    width: 60%;
-    margin: 40px auto;
+    width: 80%;
+    margin: 100px auto;
     display: flex;
     background-color: var(--color-light-50);
-    height: 80%;
-    min-width: 400px;
+    height: 70vh;
+    min-width: 720px;
 }
 
 #form_cadastro_conteudo{
     width: 60%;
+    min-width: 300px;
     padding: 5%;
 }
 
@@ -169,12 +174,12 @@
 
 #input-inline{
     display: flex;
-    justify-content: space-between;
-    gap: 6px;
+    gap: 18%;
 }
 
 #input-inline input{
     width:100%;
+    padding: 2px;
 }
 
 #buttons{
@@ -203,9 +208,187 @@
     color: var(--color-light-50);
 }
 
-img.img-lateral{
-    width: 95%;
+.img-lateral{
+    width: 100%;
     float: right;
+}
+
+img.img-lateral{
+    width: 100%;
     height: 100%;
-    min-width: 200px;
+    min-width: 400px;
+}
+
+/********************
+        Tabelas     */
+
+#tabela_container {
+    border: 5px solid transparent;
+    border-image: var(--border-gradient);
+    border-image-slice: 1; 
+    margin: 80px auto;
+    width: 80%;
+    height: 70vh;
+    padding: 20px;
+    background-color: var(--color-dark-100);
+}
+
+#tabela_container #conteudo {
+    margin: 2% auto;
+    padding: 20px 0px 20px 0px;
+    width: 90%;
+}
+
+#tabela_header {
+    display: flex;
+    color: var(--color-light-50);
+    font-size: 1.8em;
+    
+}
+
+#tabela_header i {
+    color: var(--color-light-50);
+    margin: 0px 20px 30px 0px;
+}
+
+#tabela_topo{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+#tabela_topo #btn_novo{
+    width: 10%;
+    height: 2em;
+    padding: 10px;
+    line-height: 0.7em;
+    background-color: var(--color-dark-900);
+    color: var(--color-light-50);
+    text-align: center;
+    border-radius: 10px;
+}
+
+#tabela_filtro {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+#tabela_filtro span {
+    color: var(--color-dark-900);
+    margin-left: 18px;
+    line-height: 10px;
+    display: block;
+}
+
+#tabela_filtro button {
+    border: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#selecionado button {
+    border: 2px solid var(--color-light-50);
+    background-color: var(--color-dark-900);
+}
+
+#tabela {
+    width: 100%;
+    text-align: center;
+}
+
+#scroll{
+    width: 60%;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar{
+    background-color: var(--color-dark-100);
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: var(--color-green-50);
+}
+
+thead{
+    position: sticky;
+    top: 0;
+}
+
+#tabela td, #tabela th {
+    border: 1px solid black;
+}
+
+#tabela thead {
+    background-color: var(--color-dark-75);
+}
+
+#tabela tbody {
+    background-color: var(--color-green-50);
+}
+
+#tabela_principal {
+    display: flex;
+}
+
+#lateral_tabela{
+    margin: 0 auto;
+    width: 30%;
+}
+
+#tabela_principal form {
+    display: flex;
+    max-height: 1.8em;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#tabela_principal form input {
+    border-radius: 15px;
+    padding-left: 15px;
+    box-shadow: 2px 2px 8px var(--color-green-50);
+    width: 80%;
+}
+
+#botao_pesquisa{
+    border: none;
+    background-color: var(--color-dark-900);
+    color: var(--color-light-50);
+    margin-left: 5px;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 0.8em;
+}
+
+#tabela_acoes{
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#tabela_acoes a{
+    padding: 2px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px var(--color-green-50);
+}
+
+#btn_editar{
+    background-color: var(--color-light-50);
+    color: var(--color-dark-900);
+}
+
+#btn_excluir{
+    background-color: var(--color-dark-900);
+    color: var(--color-light-50);
+}
+
+.linha-selecionada{
+    background-color: var(--color-green-75) ;
 }
