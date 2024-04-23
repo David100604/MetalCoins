@@ -74,7 +74,7 @@
             </div>
 
             <div id="img_lateral_produto">
-
+                <img src="../images/img-editar-produto.png" alt="">
             </div>
 
         </form>

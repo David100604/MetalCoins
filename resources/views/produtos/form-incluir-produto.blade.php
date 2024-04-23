@@ -73,8 +73,8 @@
 
             </div>
 
-            <div id="img_lateral_produto">
-
+            <div>
+                <img class="img-lateral" src="../images/img-cadastrar-produto.png" alt="teste">
             </div>
 
         </form>

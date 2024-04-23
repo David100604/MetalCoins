@@ -7,10 +7,10 @@
     <div id="conteudo">
         
         <div id="tabela_header">
-            <a id="tabela_voltar" href={{ route('servicos.index') }}">
+            <a id="tabela_voltar" href="{{ route('produto.index') }}">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <h2>Serviços</h2>
+            <h2>Produtos</h2>
         </div>
 
         <div id="tabela_topo">
@@ -46,16 +46,16 @@
                             <th>Nome</th>
                             <th>Descrição</th>
                             <th>Valor</th>
-                            <th>Provedor</th>
+                            <th>Estoque</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($resultados as $resultado)
                     
-                        @if($resultado->servicos)
+                        @if($resultado->produtos)
                         <tr>
                             <td>
-                                {{$resultado->servicos->servico_id }}
+                                {{$resultado->produtos->produto_id }}
                             </td>
                             <td>
                                 {{ $resultado->nome }}
@@ -67,7 +67,7 @@
                                 {{ $resultado->valor }}
                             </td>
                             <td>
-                                {{ $resultado->servicos->provedor }}
+                                {{ $resultado->produtos->estoque }}
                             </td>
                         </tr>
                         @endif

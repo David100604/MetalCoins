@@ -41,6 +41,11 @@ Route::put('/produto/atualizar/{item_id}',
 Route::get('/produto/editar',
             [App\Http\Controllers\ProdutoController::class, 'edit'])
             ->name('produto.editar');
+
+Route::get('/produto/pesquisar',
+            [App\Http\Controllers\ProdutoController::class, 'search'])
+            ->name('produto.pesquisar');
+            
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

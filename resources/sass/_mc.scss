@@ -90,7 +90,7 @@
 
 
 #form_cadastro{
-    border: 5px solid var(--color-dark-900);
+    border: 5px solid var(--color-border);
     width: 1080px;
     min-height: 750px;
     margin-top: 100px;
@@ -165,7 +165,7 @@
     background-color: var(--color-light-100);
     width: 450px;
     font-size: 18px;
-    padding: 0px 2px;
+    padding: 0px 10px;
 }
 
 .id-cadastro,
@@ -207,4 +207,14 @@
 #btn_cadastrar{
     background-color: var(--color-dark-900);
     color: var(--color-light-50);
+}
+
+#img_lateral_editar_produto{
+    background: url("/public/images/img-editar-produto.png");
+    min-width: 520px;
+}
+
+#img_lateral_editar_servico{
+    background: url("/public/images/img-editar-servico.png");
+    min-width: 520px;
 }

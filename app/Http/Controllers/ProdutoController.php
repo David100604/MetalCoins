@@ -108,4 +108,20 @@ class ProdutoController extends Controller
             
         return Redirect()->route('produto.index');
     }
+    
+
+    public function search(Request $request)
+    {
+    if(empty($request->search)) {
+        echo("Favor preencher todos os campos");
+    }
+    else 
+    {
+        $pesquisa = $request->input('search');
+        $resultados = Item::where('nome', 'like', "%$pesquisa%")->get();
+    
+        return view('produtos.produtos-filtro', ['resultados' => $resultados]);
+    }
+
+    }
 }
