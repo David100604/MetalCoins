@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
 
-        <form id="form_cadastro" action="{{ route('produto.incluir') }}" method="POST">
-
+        <form id="form_cadastro" action="{{ route('produto.atualizar', ['item_id' => $produto->item_id] )}}" method="POST">
+            @method('PUT')
             @csrf
             <div id="form_cadastro_conteudo">
 
@@ -14,7 +14,7 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                     
-                    <h1 id="form_title">Cadastrar Produto</h1>
+                    <h1 id="form_title">Editar Produto</h1>
                 </div>
                 
                 <hr id="linha_cadastro">
@@ -34,10 +34,11 @@
                             value="{{ $item->nome }}"/>
                         </div>
 
+                        
                         <div class="cadastro-input-field">
                             <label for="produto">Descrição</label>
                             <textarea type="text" name="descricao" id="produto" class="form-input" 
-                                value="{{ $item->descricao }}"></textarea>
+                             rows="4">{{ $item->descricao }}</textarea>
                         </div>
 
                         <div id="input-inline">
@@ -57,7 +58,7 @@
                             <div class="cadastro-input-field">
                                 <label for="produto">Estoque</label>
                                 <input type="text" name="estoque" id="produto" class="form-input" 
-                                    value="{{ $item->estoque }}"/>
+                                    value="{{ $produto->estoque }}"/>
                             </div>
 
                         </div>
@@ -68,13 +69,13 @@
 
                 <div id="buttons">
                     <button id="btn_limpar" type="reset">Limpar</button>
-                    <button id="btn_cadastrar" type="submit">Cadastrar</button>
+                    <button id="btn_cadastrar" type="submit">Salvar</button>
                 </div>
 
             </div>
 
-            <div id="img_lateral_produto">
-                <img src="../images/img-editar-produto.png" alt="">
+            <div>
+                <img class="img-lateral" src="../images/img-editar-produto.png" alt="teste">
             </div>
 
         </form>

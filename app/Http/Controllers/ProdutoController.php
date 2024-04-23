@@ -68,8 +68,9 @@ class ProdutoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request, Produto $produto)
+    public function edit(Request $request)
     {
+        
         $produto = \App\Models\Item::where('item_id', $request->item_id)->first()->produtos;
         $item = \App\Models\Item::where('item_id', $request->item_id)->first();
 
