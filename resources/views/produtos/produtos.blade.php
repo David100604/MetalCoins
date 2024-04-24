@@ -17,19 +17,19 @@
             <div id="tabela_filtro">
                 <label>
                     <a id="primeiro" href="">
-                        <button><span>Usuários</span></button>
+                        <button><span class="text-white">Usuários</span></button>
                     </a>
                 </label>
 
                 <label id="selecionado">
                     <a href="{{ route('produto.index') }}">
-                        <button><span>Produtos</span></button>
+                        <button><span class="text-white">Produtos</span></button>
                     </a>
                 </label>
 
                 <label class="filtro">
                     <a href="{{ route('servicos.index') }}">
-                        <button><span>Serviços</span></button>
+                        <button><span class="text-white">Serviços</span></button>
                     </a>
                 </label>
             </div>

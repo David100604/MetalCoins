@@ -12,7 +12,9 @@ Route::get('/signin', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/',
+function () { return view('home-admin');})
+->name('inicio');
 
 Route::view('/home-admin', 'home-admin')
 ->name('home.admin');

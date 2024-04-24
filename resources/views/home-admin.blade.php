@@ -2,7 +2,9 @@
 
 @section('content')
 
-<div class="row">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<div class="row bg-white">
     <div class="col-2 col-sidebar">
         <div class="m-4">
             <h4 class="text-white">Acessar tabela</h4>
@@ -36,6 +38,34 @@
             </div>
         </div>
         <h2 class="m-3 mt-4"></h2>
+        <div class="chart-container">
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+            <script>
+            var xValues = ["Pedidos", "Produtos", "Serviços", "Usuários"];
+            var yValues = [55, 49, 44, 24, 15];
+            var barColors = ["red", "green","blue","orange","brown"];
+
+            new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "Relatório de novos cadastros"
+                }
+            }
+            });
+            </script>
+        </div>
     </div>
 </div>
+
 @endsection
