@@ -1,68 +1,106 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{route('servicos.index')}}" class="btn btn-primary m-2">
-        Voltar
-    </a>
-    <a href="{{route('servico.novo')}}" class="btn btn-primary">
-        Novo
-    </a>
-    <form class="form-control pt-3 pb-3" action="{{ route('servico.pesquisar') }}" method="GET">
-        <input class="input-pesquisa" type="text" name="search" placeholder="Pesquisar serviço">
-        <button type="submit">Buscar</button>
-    </form>
-<table class="table table-hover table-striped">
-    <thead>
-        <tr>
-            <th>ID do serviço</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Provedor</th>
-            <th width=10%>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($resultados as $resultado)
+
+<div id="tabela_container">
+    
+    <div id="conteudo">
         
-        @if($resultado->servicos)
-        <tr>
-            <td>
-                <li>{{ $resultado->servicos->item_id }}</li> 
-            </td>
-            <td>
-                <li>{{ $resultado->nome }}</li>
-            </td>
-            <td>
-                <li>{{ $resultado->descricao }}</li>
-            </td>
-            <td>
-                <li>{{ $resultado->valor }}</li>
-            </td>
-            <td>
-                <li>{{ $resultado->servicos->provedor }}</li>
-            </td>
-            <td>
-                <a href="{{ route('servico.editar',
-                ['item_id' => $resultado->item_id])}}" 
-                class="btn btn-secondary btn-sm">Editar</a>
+        <div id="tabela_header">
+            <a id="tabela_voltar" href="{{ route('servicos.index') }}">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h2>Serviços</h2>
+        </div>
 
-                <a href="{{ route('servico.excluir', 
-                ['item_id' => $resultado->item_id])}}" 
-                class="btn btn-danger btn-sm">Excluir</a>
-            </td>
-        </tr>
-        @endif
+        <div id="tabela_topo">
+            <div id="tabela_filtro">
+                <label>
+                    <a id="primeiro" href="">
+                        <button><span>Usuários</span></button>
+                    </a>
+                </label>
 
-        @endforeach
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="6">
-            # Número de registros: {{ App\Models\Servico::count() }}
-            </th>
-        </tr>
-    </tfoot>
-</table>
+                <label>
+                    <a href="{{ route('produto.index') }}">
+                        <button><span>Produtos</span></button>
+                    </a>
+                </label>
+
+                <label id="selecionado">
+                    <a href="{{ route('servicos.index') }}">
+                        <button><span>Serviços</span></button>
+                    </a>
+                </label>
+            </div>
+            
+            <a href="{{route('servico.novo')}}" id="btn_novo">Novo</a>
+        </div>
+
+        <div id="tabela_principal">
+            <div id="scroll">
+                <table id="tabela">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Provedor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($resultados as $resultado)
+                    
+                        @if($resultado->servicos)
+                        <tr data-id='{{ $resultado->item_id }}'>
+                            <td>
+                                {{$resultado->servicos->servico_id }}
+                            </td>
+                            <td>
+                                {{ $resultado->nome }}
+                            </td>
+                            <td>
+                                {{ $resultado->descricao }}
+                            </td>
+                            <td>
+                                {{ $resultado->valor }}
+                            </td>
+                            <td>
+                                {{ $resultado->servicos->provedor }}
+                            </td>
+                        </tr>
+                        @endif
+
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="lateral_tabela">
+
+                <form class="tabela_pesquisa" action="{{ route('servico.pesquisar') }}" method="GET">
+                    <input type="search" name="search" placeholder="Pesquisar" required>
+                    <div>
+                        <button id="botao_pesquisa" type="submit">Buscar</button>
+                    </div>    
+                </form>
+
+                <div id="tabela_acoes">
+                    <a href="{{ route('servico.editar',
+                    ['item_id' => $resultado->item_id])}}" 
+                    id="btn_editar">Editar</a>
+
+                    <a href="{{ route('servico.excluir', 
+                    ['item_id' => $resultado->item_id])}}" 
+                    id="btn_excluir">Excluir</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
 
 @endsection

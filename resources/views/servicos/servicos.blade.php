@@ -53,7 +53,7 @@
                         @foreach ($itens as $item)
                     
                         @if($item->servicos)
-                        <tr>
+                        <tr data-id='{{ $item->item_id }}'>
                             <td>
                                 {{$item->servicos->servico_id }}
                             </td>
@@ -92,8 +92,9 @@
                     id="btn_editar">Editar</a>
 
                     <a href="{{ route('servico.excluir', 
-                    ['item_id' => $item->item_id])}}" 
+                    ['item_id' => $item->item_id]) }}" 
                     id="btn_excluir">Excluir</a>
+
                 </div>
 
             </div>
@@ -102,5 +103,7 @@
 
     </div>
 </div>
+
+
 
 @endsection

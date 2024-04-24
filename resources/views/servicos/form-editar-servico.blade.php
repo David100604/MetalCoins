@@ -14,13 +14,14 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
 
-                    <h1 id="form_title">Editar Produto</h1>
+                    <h1 id="form_title">Editar Serviço</h1>
                 </div>
 
                 <hr id="linha_cadastro">
 
                 <div id="form_cadastro_dados">
 
+                    <input type="hidden" name="item_id" value="{{ $item->item_id }}">
                     <div class="id-cadastro">
                         <label for="id" class="label-form">ID</label>
                         <input type="number" name="id" id="id" class="form-input" value="0" readonly>
@@ -29,7 +30,7 @@
                     <div id="form_cadastro_inputs">
 
                         <div class="cadastro-input-field">
-                            <label for="servico">Nome do Produto</label>
+                            <label for="servico">Nome do Serviço</label>
                             <input type="text" name="nome" id="servico" class="form-input"
                                 value="{{ $item->nome }}" />
                         </div>

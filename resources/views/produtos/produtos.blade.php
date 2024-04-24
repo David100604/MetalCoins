@@ -54,7 +54,7 @@
                     <tbody>
                     @foreach ($itens as $item)
                         @if($item->produtos)
-                        <tr>
+                        <tr data-id='{{ $item->item_id }}'> 
                             <td>
                                 {{ $item->produtos->produto_id }} 
                             </td>

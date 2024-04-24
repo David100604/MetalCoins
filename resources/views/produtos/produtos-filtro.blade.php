@@ -21,20 +21,20 @@
                     </a>
                 </label>
 
-                <label>
+                <label id="selecionado">
                     <a href="{{ route('produto.index') }}">
                         <button><span>Produtos</span></button>
                     </a>
                 </label>
 
-                <label id="selecionado">
+                <label>
                     <a href="{{ route('servicos.index') }}">
                         <button><span>Serviços</span></button>
                     </a>
                 </label>
             </div>
             
-            <a href="{{route('servico.novo')}}" id="btn_novo">Novo</a>
+            <a href="{{route('produto.novo')}}" id="btn_novo">Novo</a>
         </div>
 
         <div id="tabela_principal">
@@ -53,7 +53,7 @@
                         @foreach ($resultados as $resultado)
                     
                         @if($resultado->produtos)
-                        <tr>
+                        <tr data-id='{{ $resultado->item_id }}'>
                             <td>
                                 {{$resultado->produtos->produto_id }}
                             </td>
@@ -79,7 +79,7 @@
 
             <div id="lateral_tabela">
 
-                <form class="tabela_pesquisa" action="{{ route('servico.pesquisar') }}" method="GET">
+                <form class="tabela_pesquisa" action="{{ route('produto.pesquisar') }}" method="GET">
                     <input type="search" name="search" placeholder="Pesquisar" required>
                     <div>
                         <button id="botao_pesquisa" type="submit">Buscar</button>
@@ -87,11 +87,11 @@
                 </form>
 
                 <div id="tabela_acoes">
-                    <a href="{{ route('servico.editar',
+                    <a href="{{ route('produto.editar',
                     ['item_id' => $resultado->item_id])}}" 
                     id="btn_editar">Editar</a>
 
-                    <a href="{{ route('servico.excluir', 
+                    <a href="{{ route('produto.excluir', 
                     ['item_id' => $resultado->item_id])}}" 
                     id="btn_excluir">Excluir</a>
                 </div>

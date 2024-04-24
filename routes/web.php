@@ -30,7 +30,7 @@ Route::get('/produto/novo',
             [\App\Http\Controllers\ProdutoController::class, 'create'])
             ->name('produto.novo');
 
-Route::get('/produto/{item_id}/excluir',
+Route::get('/produto/excluir/{item_id}',
             [App\Http\Controllers\ProdutoController::class, 'destroy'])
             ->name('produto.excluir');
 
@@ -70,7 +70,7 @@ Route::post('/servico/incluir',
 [App\Http\Controllers\ServicoController::class, 'store'])
 ->name('servico.incluir');
 
-Route::get('/servico/{item_id}/excluir',
+Route::get('/servico/excluir/{item_id}',
 [App\Http\Controllers\ServicoController::class, 'destroy'])
 ->name('servico.excluir');
 
