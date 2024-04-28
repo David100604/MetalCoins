@@ -53,49 +53,52 @@
                     </thead>
                     <tbody>
                     @foreach ($itens as $item)
-                        @if($item->produtos)
-                        <tr data-id='{{ $item->item_id }}'> 
-                            <td>
-                                {{ $item->produtos->produto_id }} 
-                            </td>
-                            <td>
-                                {{ $item->nome }}
-                            </td>
-                            <td>
-                                {{ $item->descricao }}
-                            </td>
-                            <td>
-                                {{ $item->valor }}
-                            </td>
-                            <td>
-                                {{ $item->produtos->estoque }}
-                            </td>
-                        </tr>
+                        @if($item)
+                            @if($item->produtos)
+                            <tr data-id='{{ $item->item_id }}'> 
+                                <td>
+                                    {{ $item->produtos->produto_id }} 
+                                </td>
+                                <td>
+                                    {{ $item->nome }}
+                                </td>
+                                <td>
+                                    {{ $item->descricao }}
+                                </td>
+                                <td>
+                                    {{ $item->valor }}
+                                </td>
+                                <td>
+                                    {{ $item->produtos->estoque }}
+                                </td>
+                            </tr>
+                            @endif
                         @endif
-
                         @endforeach
                     </tbody>
                 </table>
             </div>
 
-            <div id="lateral_tabela">
-                <form class="tabela_pesquisa" action="{{ route('produto.pesquisar') }}" method="GET">
-                    <input type="search" name="search" placeholder="Pesquisar" required>
-                    <div >
-                        <button id="botao_pesquisa" type="submit">Buscar</button>
-                    </div>  
-                </form>
+            @if($itens)
+                <div id="lateral_tabela">
+                    <form class="tabela_pesquisa" action="{{ route('produto.pesquisar') }}" method="GET">
+                        <input type="search" name="search" placeholder="Pesquisar" required>
+                        <div >
+                            <button id="botao_pesquisa" type="submit">Buscar</button>
+                        </div>  
+                    </form>
+                    
+                    <div id="tabela_acoes">
+                        <a href="{{ route('produto.editar',
+                        ['item_id' => $item->item_id])}}" 
+                        id="btn_editar">Editar</a>
 
-                <div id="tabela_acoes">
-                    <a href="{{ route('produto.editar',
-                    ['item_id' => $item->item_id])}}" 
-                    id="btn_editar">Editar</a>
-
-                    <a href="{{ route('produto.excluir', 
-                    ['item_id' => $item->item_id])}}" 
-                    id="btn_excluir">Excluir</a>
+                        <a href="{{ route('produto.excluir', 
+                        ['item_id' => $item->item_id])}}" 
+                        id="btn_excluir">Excluir</a>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 </div>
