@@ -85,7 +85,7 @@ class ProdutoController extends Controller
             
             return $imageName;
         } else {
-            return null; // Ou outra ação caso não seja enviada uma imagem válida
+            return null;
         }
     }
 
