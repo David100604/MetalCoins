@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <form id="form_cadastro" action="{{ route('produto.incluir') }}" method="POST">
+        <form enctype="multipart/form-data" id="form_cadastro" action="{{ route('produto.incluir') }}" method="POST">
 
             @csrf
             <div id="form_cadastro_conteudo">
@@ -30,7 +30,7 @@
 
                         <div class="cadastro-input-field">
                             <label for="produto">Nome do Produto</label>
-                            <input type="text" name="nome" id="produto" class="form-input" 
+                            <input  type="text" name="nome" id="produto" class="form-input" 
                             value=""/>
                         </div>
 
@@ -38,6 +38,11 @@
                             <label for="produto">Descrição</label>
                             <textarea type="text" name="descricao" id="produto" class="form-input" 
                                 rows="4"></textarea>
+                        </div>
+
+                        <div class="cadastro-input-field">
+                            <label for="imagem">Imagem</label>
+                            <input type="file" name="imagem" id="imagem" class="form-control-file" >
                         </div>
 
                         <div id="input-inline">

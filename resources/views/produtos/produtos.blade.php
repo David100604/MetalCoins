@@ -74,7 +74,7 @@
                             </tr>
                             @endif
                         @endif
-                        @endforeach
+                    @endforeach
                     </tbody>
                 </table>
             </div>
