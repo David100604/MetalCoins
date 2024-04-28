@@ -12,8 +12,8 @@ class ServicoController extends Controller
 {
     public function catalogo()
     {
-        $servicos = Servico::all();
-        return view('catalogo.catalogo-servicos', ['itens' => $servicos]);
+        $itens = Item::with('servicos')->get();
+        return view('catalogo.catalogo-servicos', ['itens' => $itens]);
     }
 
     /**
