@@ -78,3 +78,8 @@ Route::get('/servico/excluir/{item_id}',
 Route::get('/servico/pesquisar',
 [App\Http\Controllers\ServicoController::class, 'search'])
 ->name('servico.pesquisar');
+
+//CATALOGO
+Route::get('/catalogo', 
+            [\App\Http\Controllers\ProdutoController::class, 'catalogo'])
+            ->name('catalogo.index');
