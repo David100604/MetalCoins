@@ -53,27 +53,28 @@
                     </thead>
                     <tbody>
                     @foreach ($itens as $item)
-                        @if($item->produtos)
-                        <tr data-id='{{ $item->item_id }}'> 
-                            <td>
-                                {{ $item->produtos->produto_id }} 
-                            </td>
-                            <td>
-                                {{ $item->nome }}
-                            </td>
-                            <td>
-                                {{ $item->descricao }}
-                            </td>
-                            <td>
-                                {{ $item->valor }}
-                            </td>
-                            <td>
-                                {{ $item->produtos->estoque }}
-                            </td>
-                        </tr>
+                        @if($item)
+                            @if($item->produtos)
+                            <tr data-id='{{ $item->item_id }}'> 
+                                <td>
+                                    {{ $item->produtos->produto_id }} 
+                                </td>
+                                <td>
+                                    {{ $item->nome }}
+                                </td>
+                                <td>
+                                    {{ $item->descricao }}
+                                </td>
+                                <td>
+                                    {{ $item->valor }}
+                                </td>
+                                <td>
+                                    {{ $item->produtos->estoque }}
+                                </td>
+                            </tr>
+                            @endif
                         @endif
-
-                        @endforeach
+                    @endforeach
                     </tbody>
                 </table>
             </div>

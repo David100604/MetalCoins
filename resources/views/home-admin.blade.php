@@ -7,7 +7,7 @@
         <div class="m-4">
             <h4 class="text-white">Acessar tabela</h4>
             <hr class="text-white">
-            <a class="text-white" href="" style="text-decoration:none"><h5>Produtos</h5></a>
+            <a class="text-white" href="{{route('produto.index')}}" style="text-decoration:none"><h5>Produtos</h5></a>
             <a class="text-white" href="{{route('servicos.index')}}" style="text-decoration:none"><h5>Serviços</h5></a>
             <a class="text-white" href="" style="text-decoration:none"><h5>Usuários</h5></a>
             <a class="text-white" href="" style="text-decoration:none"><h5>Pedidos</h5></a>
