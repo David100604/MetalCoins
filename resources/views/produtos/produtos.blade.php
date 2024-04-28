@@ -55,6 +55,7 @@
                     @foreach ($itens as $item)
                         @if($item)
                             @if($item->produtos)
+                            
                             <tr data-id='{{ $item->item_id }}'> 
                                 <td>
                                     {{ $item->produtos->produto_id }} 
