@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <form id="form_cadastro" action="{{ route('servico.atualizar', ['item_id' => $servico->item_id]) }}" method="POST">
+        <form enctype="multipart/form-data" id="form_cadastro" action="{{ route('servico.atualizar', ['item_id' => $servico->item_id]) }}" method="POST">
             @method('PUT')
             @csrf
             <div id="form_cadastro_conteudo">
@@ -43,7 +43,7 @@
 
                         <div class="cadastro-input-field">
                             <label for="imagem">Imagem</label>
-                            <input type="file" name="imagem" id="imagem" class="form-control-file" >
+                            <input type="file" name="imagem" id="imagem" class="form-control-file" value='{{$item->imagem}}'>
                         </div>
 
                         <div id="input-inline">

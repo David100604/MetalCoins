@@ -25,13 +25,13 @@
         </div>
         <div class="card m-3">
             <div class="card-body">
-                <h5 class="card-title">11</h5>
+                <h5 class="card-title">{{ App\Models\Produto::count()}}</h5>
                 <p class="card-text">Produtos no catálogo</p>
             </div>
         </div>
         <div class="card m-3">
             <div class="card-body">
-                <h5 class="card-title">4</h5>
+                <h5 class="card-title">{{ App\Models\Servico::count()}}</h5>
                 <p class="card-text">Serviços catalogados</p>
             </div>
         </div>

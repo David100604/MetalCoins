@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
 
-        <form id="form_cadastro" action="{{ route('produto.atualizar', ['item_id' => $produto->item_id] )}}" method="POST">
+        <form enctype="multipart/form-data" id="form_cadastro" action="{{ route('produto.atualizar', ['item_id' => $produto->item_id] )}}" method="POST">
             @method('PUT')
             @csrf
-            <div id="form_cadastro_conteudo">
+            <div id="form_cadastro_conteudo"> 
 
                 <div id="form_cadastro_header">
 
@@ -43,7 +43,7 @@
 
                         <div class="cadastro-input-field">
                             <label for="imagem">Imagem</label>
-                            <input type="file" name="imagem" id="imagem" class="form-control-file" >
+                            <input type="file" name="imagem" id="imagem" class="form-control-file">
                         </div>
 
                         <div id="input-inline">
