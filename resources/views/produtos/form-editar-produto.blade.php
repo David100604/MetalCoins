@@ -41,6 +41,11 @@
                              rows="4">{{ $item->descricao }}</textarea>
                         </div>
 
+                        <div class="cadastro-input-field">
+                            <label for="imagem">Imagem</label>
+                            <input type="file" name="imagem" id="imagem" class="form-control-file" >
+                        </div>
+
                         <div id="input-inline">
 
                             <div class="cadastro-input-field">

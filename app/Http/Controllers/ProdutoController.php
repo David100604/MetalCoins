@@ -11,12 +11,16 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function catalogo(){
         $itens = Item::with('produtos')->get();
-
+         
         return view('catalogo.catalogo-produtos', ['itens' => $itens]);
 
     }
+
 
     public function index()
     {
@@ -40,6 +44,20 @@ class ProdutoController extends Controller
         return view('produtos.form-incluir-produto', ['produto' => $produto]);
     }
 
+    public function salvarImagem($request){
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName()) . strtotime("now") . "." . $extension;
+
+            $request->imagem->move(public_path('images/produtos'), $imageName);
+            
+            return $imageName;
+        }  
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -52,17 +70,8 @@ class ProdutoController extends Controller
         $item->tipo_item = 'Produto'; 
 
         // Upload da imagem
-        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
-            $requestImage = $request->imagem;
-
-            $extension = $requestImage->extension();
-
-            $imageName = md5($requestImage->getClientOriginalName()) . strtotime("now") . "." . $extension;
-
-            $request->imagem->move(public_path('images/produtos'), $imageName);
-
-            $item->imagem = $imageName;
-        } 
+        
+        $item->imagem = $this->salvarImagem($request);
         $item->save();
 
         $produto = new \App\Models\Produto;
@@ -109,6 +118,8 @@ class ProdutoController extends Controller
         $produto->estoque = $request->estoque;
 
         $produto->save();
+
+        $item->imagem = $this->salvarImagem($request);
         $item->save();
         
         return Redirect()->route('produto.index');
