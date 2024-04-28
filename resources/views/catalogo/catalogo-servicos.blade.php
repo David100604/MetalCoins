@@ -9,7 +9,7 @@
             @if($item)
                 @if ($item->servicos)
                     <div class="catalog-item">
-                    <img src="{{ asset('images/servicos/' . $item->imagem) }}" alt="{{ $item->nome }}">
+                    <img src="{{ asset('images/servico/' . $item->imagem) }}" alt="{{ $item->nome }}">
                         <div class="catalog-item-info">
                             <h3>{{ $item->nome }}</h3>
                             <p>{{ $item->descricao }}</p>
