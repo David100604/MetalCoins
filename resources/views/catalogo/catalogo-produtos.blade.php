@@ -8,7 +8,7 @@
         @foreach ($itens as $item)
             @if ($item->produtos)
                 <div class="catalog-item">
-                 <img src="{{ asset($item->produtos->imagem) }}" alt="{{ $item->nome }}">
+                <img src="{{ asset('images/produtos/' . $item->imagem) }}" alt="{{ $item->nome }}">
                     <div class="catalog-item-info">
                         <h3>{{ $item->nome }}</h3>
                         <p>{{ $item->descricao }}</p>

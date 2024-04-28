@@ -10,6 +10,12 @@ use App\Http\Requests\UpdateServicoRequest;
 
 class ServicoController extends Controller
 {
+    public function catalogo()
+    {
+        $servicos = Servico::all();
+        return view('catalogo.catalogo-servicos', ['itens' => $servicos]);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -52,6 +58,24 @@ class ServicoController extends Controller
         return view('servicos.form-incluir-servico');
     }
 
+    public function salvarImagem(Request $request)
+    {
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName()) . '_' . strtotime("now") . "." . $extension;
+
+            $request->imagem->move(public_path('images/servico'), $imageName);
+            
+            return $imageName;
+        } else {
+            return null; // Ou outra ação caso não seja enviada uma imagem válida
+        }
+    }
+    
+
     /**
      * Store a newly created resource in storage.
      */
@@ -63,37 +87,28 @@ class ServicoController extends Controller
         $item->valor = $request->valor;
         $item->tipo_item = 'Serviço'; 
 
-        // Upload da imagem
-        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
-            $requestImage = $request->imagem;
-
-            $extension = $requestImage->extension();
-
-            $imageName = md5($requestImage->getClientOriginalName()) . strtotime("now") . "." . $extension;
-
-            $request->imagem->move(public_path('images/servicos'), $imageName);
-
-            $item->imagem = $imageName;
-        } 
-        
+    // Upload da imagem
+                
+        $item->imagem = $this->salvarImagem($request);
         $item->save();
 
-        $servico = new \App\Models\Servico;
+        $servico = new \App\Models\Servico();
         $servico->provedor = $request->provedor; 
         $servico->itens()->associate($item);
         $servico->item_id = $item->item_id;
         $servico->save();
 
-        return Redirect()->route('servicos.index');
-    }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Servico $servico)
-    {
-        //
-    }
+        return Redirect()->route('servicos.index');
+        }
+
+        /**
+         * Display the specified resource.
+         */
+        public function show(Servico $servico)
+        {
+            //
+        }
 
     /**
      * Show the form for editing the specified resource.

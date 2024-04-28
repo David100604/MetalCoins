@@ -393,7 +393,7 @@ thead{
 .linha-selecionada{
     background-color: var(--color-green-75) ;
 }
-/** CATALOGO **/
+/** CATALOGO  **/
 
 .catalog-item {
     width: calc(25% - 30px); 
@@ -406,6 +406,7 @@ thead{
     margin: 15px;
     float: left;
     clear: none;
+    padding-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -435,7 +436,12 @@ thead{
 }
 
 
-
+.catalog-item img {
+    max-width: 90%; 
+    max-height: 100%;
+    display: block; 
+    margin: 0 auto; 
+}
 .catalog-item img {
     max-width: 100%;
     height: auto;

@@ -79,7 +79,10 @@ Route::get('/servico/pesquisar',
 [App\Http\Controllers\ServicoController::class, 'search'])
 ->name('servico.pesquisar');
 
-//CATALOGO
+//CATALOGO SERVIÇOS
 Route::get('/catalogo', 
             [\App\Http\Controllers\ProdutoController::class, 'catalogo'])
             ->name('catalogo.index');
+
+Route::get('/catalogo-servicos', [\App\Http\Controllers\ServicoController::class, 'catalogo'])
+            ->name('catalogo-servicos.index');
