@@ -51,54 +51,55 @@
                     </thead>
                     <tbody>
                         @foreach ($itens as $item)
-                    
-                        @if($item->servicos)
-                        <tr data-id='{{ $item->item_id }}'>
-                            <td>
-                                {{$item->servicos->servico_id }}
-                            </td>
-                            <td>
-                                {{ $item->nome }}
-                            </td>
-                            <td>
-                                {{ $item->descricao }}
-                            </td>
-                            <td>
-                                {{ $item->valor }}
-                            </td>
-                            <td>
-                                {{ $item->servicos->provedor }}
-                            </td>
-                        </tr>
-                        @endif
-
+                            @if($item)
+                                @if($item->servicos)
+                                <tr data-id='{{ $item->item_id }}'>
+                                    <td>
+                                        {{$item->servicos->servico_id }}
+                                    </td>
+                                    <td>
+                                        {{ $item->nome }}
+                                    </td>
+                                    <td>
+                                        {{ $item->descricao }}
+                                    </td>
+                                    <td>
+                                        {{ $item->valor }}
+                                    </td>
+                                    <td>
+                                        {{ $item->servicos->provedor }}
+                                    </td>
+                                </tr>
+                                @endif
+                            @endif    
                         @endforeach
                     </tbody>
                 </table>
             </div>
 
-            <div id="lateral_tabela">
+            @if($itens)
+                <div id="lateral_tabela">
 
-                <form class="tabela_pesquisa" action="{{ route('servico.pesquisar') }}" method="GET">
-                    <input type="search" name="search" placeholder="Pesquisar" required>
-                    <div>
-                        <button id="botao_pesquisa" type="submit">Buscar</button>
-                    </div>    
-                </form>
+                    <form class="tabela_pesquisa" action="{{ route('servico.pesquisar') }}" method="GET">
+                        <input type="search" name="search" placeholder="Pesquisar" required>
+                        <div>
+                            <button id="botao_pesquisa" type="submit">Buscar</button>
+                        </div>    
+                    </form>
 
-                <div id="tabela_acoes">
-                    <a href="{{ route('servico.editar',
-                    ['item_id' => $item->item_id])}}" 
-                    id="btn_editar">Editar</a>
+                    <div id="tabela_acoes">
+                        <a href="{{ route('servico.editar',
+                        ['item_id' => $item->item_id])}}" 
+                        id="btn_editar">Editar</a>
 
-                    <a href="{{ route('servico.excluir', 
-                    ['item_id' => $item->item_id]) }}" 
-                    id="btn_excluir">Excluir</a>
+                        <a href="{{ route('servico.excluir', 
+                        ['item_id' => $item->item_id]) }}" 
+                        id="btn_excluir">Excluir</a>
+
+                    </div>
 
                 </div>
-
-            </div>
-
+            @endif
         </div>
 
     </div>

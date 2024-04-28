@@ -11,6 +11,13 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
+    public function catalogo(){
+        $itens = Item::with('produtos')->get();
+
+        return view('catalogo.catalogo-produtos', ['itens' => $itens]);
+
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -54,6 +61,19 @@ class ProdutoController extends Controller
         $item->descricao = $request->descricao;
         $item->valor = $request->valor;
         $item->tipo_item = 'Produto'; 
+
+        // Upload da imagem
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName()) . strtotime("now") . "." . $extension;
+
+            $request->imagem->move(public_path('images/produtos'), $imageName);
+
+            $item->imagem = $imageName;
+        } 
         $item->save();
 
         $produto = new \App\Models\Produto;
@@ -61,6 +81,7 @@ class ProdutoController extends Controller
         $produto->itens()->associate($item);
         $produto->item_id = $item->item_id;
         $produto->save();
+
 
         return Redirect()->route('produto.index');
     }

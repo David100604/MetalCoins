@@ -62,6 +62,20 @@ class ServicoController extends Controller
         $item->descricao = $request->descricao;
         $item->valor = $request->valor;
         $item->tipo_item = 'Serviço'; 
+
+        // Upload da imagem
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName()) . strtotime("now") . "." . $extension;
+
+            $request->imagem->move(public_path('images/servicos'), $imageName);
+
+            $item->imagem = $imageName;
+        } 
+        
         $item->save();
 
         $servico = new \App\Models\Servico;
