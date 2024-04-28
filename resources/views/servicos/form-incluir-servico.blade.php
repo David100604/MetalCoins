@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container"> 
 
-        <form id="form_cadastro" action="{{ route('servico.incluir') }}" method="POST">
+        <form enctype="multipart/form-data" id="form_cadastro" action="{{ route('servico.incluir') }}" method="POST">
 
             @csrf
             <div id="form_cadastro_conteudo">

@@ -25,7 +25,7 @@
       </ul>
       <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <h6>Bem vindo(a), Fulano</h6>
+            <p>Bem vindo(a), Fulano</p>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-3" href="">Sair</a>

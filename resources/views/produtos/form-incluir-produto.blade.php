@@ -6,7 +6,7 @@
         <form enctype="multipart/form-data" id="form_cadastro" action="{{ route('produto.incluir') }}" method="POST">
 
             @csrf
-            <div id="form_cadastro_conteudo">
+            <div id="form_cadastro_conteudo"> 
 
                 <div id="form_cadastro_header">
 

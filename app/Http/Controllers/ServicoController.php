@@ -70,9 +70,7 @@ class ServicoController extends Controller
             $request->imagem->move(public_path('images/servico'), $imageName);
             
             return $imageName;
-        } else {
-            return null; // Ou outra ação caso não seja enviada uma imagem válida
-        }
+        } 
     }
     
 
