@@ -11,6 +11,13 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
+    public function catalogo(){
+        $itens = Item::with('produtos')->get();
+
+        return view('catalogo.catalogo-produtos', ['itens' => $itens]);
+
+    }
+
     /**
      * Display a listing of the resource.
      */
