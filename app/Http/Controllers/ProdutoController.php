@@ -18,17 +18,6 @@ class ProdutoController extends Controller
 
     }
 
-    /**
-     * Display a listing of the resource.
-     */
-    public function catalogo(){
-        $itens = Item::with('produtos')->get();
-         
-        return view('catalogo.catalogo-produtos', ['itens' => $itens]);
-
-    }
-
-
     public function index()
     {
         $itens = \App\Models\Item::all();
