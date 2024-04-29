@@ -131,9 +131,15 @@ class ServicoController extends Controller
         
         $s = Item::find($request->item_id)->servicos;
         $s->provedor = $request->provedor;
-
+ 
         $s->save();
-        $i->save();
+
+        if($request->hasFile('imagem')){
+            $i->imagem = $this->salvarImagem($request);
+            $i->save();
+        } else{
+            $i->imagem = $i->imagem;
+        }
         
         return Redirect()->route('servicos.index');
     }

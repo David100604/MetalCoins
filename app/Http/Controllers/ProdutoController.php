@@ -150,8 +150,12 @@ class ProdutoController extends Controller
 
         $produto->save();
 
-        $item->imagem = $this->salvarImagem($request);
-        $item->save();
+        if($request->hasFile('imagem')){
+            $item->imagem = $this->salvarImagem($request);
+            $item->save();
+        } else{
+            $item->imagem = $item->imagem;
+        }
         
         return Redirect()->route('produto.index');
     }
