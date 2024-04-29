@@ -14,34 +14,6 @@ class ProdutoController extends Controller
     /**
      * Display a listing of the resource.
      */
-
-    //  public function ImagemSalvarProduto(Request $request)
-    //  {
-    //      // Validação dos dados do formulário (se necessário)
- 
-    //      // Salvar a imagem do produto
-    //      if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
-    //          $requestImage = $request->imagem;
-    //          $extension = $requestImage->extension();
-    //          $imageName = md5($requestImage->getClientOriginalName()) . '_' . strtotime("now") . "." . $extension;
-    //          $requestImage->move(public_path('images/produtos'), $imageName);
-    //      } else {
-    //          $imageName = null; // Caso não seja enviada uma imagem
-    //      }
- 
-    //      // Criar o novo item com os dados do formulário
-    //      $item = new Item;
-    //      $item->nome = $request->nome;
-    //      $item->descricao = $request->descricao;
-    //      $item->valor = $request->valor;
-    //      $item->estoque = $request->estoque;
-    //      $item->imagem = $imageName; // Salvar o caminho da imagem
-    //      $item->save();
- 
-    //      // Redirecionar para a página de listagem de produtos
-    //      return redirect()->route('produto.index');
-    //  }
-
     public function catalogo(){
         $itens = Item::with('produtos')->get();
          
